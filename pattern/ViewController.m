@@ -16,14 +16,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self makeDiamondPatternWithStages:10];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)makeDiamondPatternWithStages:(NSInteger)stages {
+    for (NSInteger i = 1; i <= stages; i++) {
+        for (NSInteger j = 1; j <= stages - i; j++) {
+            printf(" ");
+        }
+        for (NSInteger k = 1; k <= 2 * i - 1; k++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    for (NSInteger i = stages - 1; i >= 0; i--) {
+        for (NSInteger j = 1; j <= stages - i; j++) {
+            printf(" ");
+        }
+        for (NSInteger k = 1; k <= 2*i-1; k++) {
+            printf("*");
+        }
+        printf("\n");
+    }
 }
+
 
 
 @end
